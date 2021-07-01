@@ -1,0 +1,52 @@
+
+
+<canvas width="900" height="600">     </canvas>
+
+<script>
+
+        var xTela= [0, 600]
+        var yTela= [0]
+        var xtamanhoDesenho = [900, 300, 600]
+        var ytamanhoDesenho = [600, 600, 600]
+        var triangulo = [300, 450, 600]
+
+        var tela = document.querySelector("canvas");
+        var pincel = tela.getContext("2d");
+    
+    
+    function pincelPinta (x, y, x2, y2) { 
+        
+        pincel.fillRect(x, y, x2, y2)}
+
+    function pincelCor (cor){
+        
+        pincel.fillStyle = cor}
+
+    function pincelMove (x, y) {
+
+        pincel.lineTo(x, y)}
+
+
+    pincelCor("lightgrey")
+    pincelPinta(xTela[0], yTela[0], xtamanhoDesenho[0], ytamanhoDesenho[0]);
+
+    pincelCor("green");
+    pincelPinta(xTela[0], yTela[0], xtamanhoDesenho[1], ytamanhoDesenho[1]);
+
+    pincelCor("red");
+    pincelPinta(xTela[1], yTela[0], xtamanhoDesenho[2], ytamanhoDesenho[2]);
+
+    pincelCor("yellow");
+    pincel.beginPath();
+    pincel.moveTo(450, 300);
+    pincelMove(triangulo[1], triangulo[0]);
+    pincelMove(triangulo[0], triangulo[2]);
+    pincelMove(triangulo[2], triangulo[2]);
+    pincel.fill();
+
+
+
+
+
+
+</script>
